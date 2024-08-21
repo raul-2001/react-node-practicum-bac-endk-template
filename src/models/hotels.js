@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const HotelSchema = new mongoose.Schema({
-    hotelName: {
+    name: {
         type: String,
         required: [true, 'Please provide hotel name'],
         maxlength: [50, 'Name can not be more than 50 characters'],
@@ -23,8 +23,25 @@ const HotelSchema = new mongoose.Schema({
         required: [true, 'Please provide zip code'],
         maxlength: [5, 'Zip-code can not be more than 5 characters']
     },
-    stars: {
+    brand: {
         type: String,
+    },
+    stars: {
+        type: Number,
+        required: [true, 'Please provide stars for hotel']
+    },
+    latitude: {
+        type: String,
+        required: [true, 'Please provide latitude of hotel'],
+        maxlength: 12,
+    },
+    longitude: {
+        type: String,
+        required: [true, 'Please provide longitude of hotel'],
+        maxlength: 12,
+    },
+    chain: {
+        type: String
     },
     // createdBy: {
     //     type: mongoose.Types.ObjectId,

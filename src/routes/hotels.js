@@ -6,10 +6,12 @@ const {
     getSingleHotel,
     createHotel,
     deleteHotel,
-    updateHotel
+    updateHotel,
+    getList,
+
 } = require('../controllers/hotels')
 
-router.route('/').get(getAllHotels).post(createHotel)
+router.route('/').get(getAllHotels).post(createHotel).get(getList)
 router.route('/:id').get(getSingleHotel).delete(deleteHotel).patch(updateHotel)
 
 
